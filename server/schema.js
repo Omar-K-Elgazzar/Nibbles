@@ -1,10 +1,13 @@
 import mongoose from "mongoose";
 
-const postSchema = mongoose.Schema({ // each post has to have these parameters
+const postSchema = mongoose.Schema({ 
     boxno: String,
-    value: String,
+    value: {
+        type: Number, // value is also an integer
+         // Ensure it's required
+    },
 });
 
 const PostGrid = mongoose.model('grid', postSchema);
-//expxorting a mongoose model and we/ll add find create delete and update later
+
 export default PostGrid;
